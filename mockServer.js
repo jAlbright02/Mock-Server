@@ -8,8 +8,8 @@ wss.on('connection', (ws) => {
   const interval = setInterval(() => {
     const mockData = {
       speed: (Math.random() * 100).toFixed(2),  //Speed between 0-100 randomly
-      rpm: (Math.random() * 8000),
-      engineLoad: (Math.random() * 100),
+      rpm: (Math.random() * 8000).toFixed(0),
+      engineLoad: (Math.random() * 100).toFixed(0),
     };
     ws.send(JSON.stringify(mockData));
   }, 1000); //sends every second
